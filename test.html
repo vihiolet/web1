@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1" method="post">
+        <p>제목</p>
+        <input type="text" id="plz" name="plz" />
+        <div onclick="cpcpcp()">클릭</div>
+    </form>
+    <script>
+        
+        var t = document.getElementById('plz');
+
+        function cpcpcp() {
+            if(plz.value == "") {
+                alert("성명을 입력해 주십시오.");
+            }
+               
+        }
+            
+    </script>
+</body>
+</html>
+<script>
+    
+
+$(funcion)(){
+    $("#txt").css("color","red");     //제이쿼리 문법
+});
+$(document).ready(function(){
+    $("#txt").css("color","red");     //제이쿼리 문법
+});
+$(funcion)(){
+    $("#txt").css("color","red").css("color","blue");     //체이닝 기법
+}
+//배열 관련 메서드, arr은 배열을 담은 변수
+//.each() : 배열에 저장된 요소만큼 메서드 반복 실행 
+$(arr).each(function(i,o){
+    consol.log(i + ":", o);
+});
+//$.map(Array, function) : 배열에 저장된 요소만큼 메서드 반복 실행, 새 배열 반환
+var arr2 = $.map(arr1, function(i,o){
+    //배열 arr1의 객체인 area 속성이 대구면 arr2에 해당 객체를 저장, arr2 반환
+    if(i.area==대구){
+        return i;
+    }
+});
+//$.grep(Array, function) : 배열에 저장된 요소만큼 메서드 반복 실행, 새 배열 반환
+var arr2 = $.grep(arr1, function(i,o){
+    //area 속성이 대구면 반환값이 true고 arr2에 저장, arr2 반환
+    if(i.area==대구){
+        return true;
+    }else {
+        return false;
+    }
+});
+//이벤트 등록은 제이쿼리
+//단독 이벤트 사용
+$("이벤트 대상 요소").이벤트 등록 메서드(function)({
+    자바스크립트 코드;
+});
+$(".btn1").click(function)({
+    alert("Hi");
+});
+//on 구문 A(이벤트 1개 사용)
+$("이벤트 대상 요소").on("이벤트 종류", function(){
+    자바스크립트 코드;
+});
+//on 구문 B(이벤트 여러 개 사용, 자바스크립트 코드 다를 때)
+$("이벤트 대상 요소").on({ 
+    "이벤트 속성1" : function(){     // '이벤트 속성' -> css의 position속성 같은거
+        자바스크립트 코드1; 
+    },
+    "이벤트 속성2" : function(){     // position : absolute; VS "focus" : function()
+        자바스크립트 코드2; 
+    }
+}};
+//on 구문 C(이벤트 여러 개 사용, 자바스크립트 코드는 동일할 때)     
+ $("이벤트 대상 요소").on("이벤트 종류1 이벤트 종류2", function(){
+      자바스크립트 코드;
+});               
+// <a>,<form> 기본 이벤트 차단
+ $("a 또는 form").이벤트 메서드(function(){
+    자바스크립트 코드;
+    return false;
+})
+//자바스크립트 시작
+//$.inArray(data, Array, start index) : 배열에 저장된 데이터를 찾아 인덱스값 반환
+var idxNum = $.inArray("대구", arr1);
+consol.log(idxNum);
+//$.isArray(object) : 지장한 데이터가 배열 객체면 true, 아니면 false 반환
+var okArray1 = $.isArray(arr1);
+//$.maerge(Array1, Array2) : 두 배열의 객체를 하나로 묶는다
+$.merge(arr1, arr2);
+consol.log(arr1);
+//$("요소선택").index("지정선택요소") : 지정 선택 요소를 찾아서 인덱스값 반환
+//괄호 안은 모두 선택자로 class값이 list1인 <li>의 인덱스 값을 반환
+var idxNum = $("li").index($(".list1")); 
+//속성 탐색 선택자 : 선택한 요소 기준으로 일치하는 속성의 포함을 따져 요소 선택
+//$("요소 선택[속성]") : 지정한 속성이 포함된 요소만 선택
+$("#Wrap a[target]").css({"color":"red"});
+//$("요소 선택[속성^=값]") : 지정한 속성이 값으로 시작하는 요소만 선택
+$("#Wrap a[hrdf^=http]").css({"color":"blue"});
+//$("요소 선택[속성$=값]") : 지정한 속성이 값으로 끝나는 요소만 선택
+$("#Wrap a[hrdf$=com]").css({"color":"orange"});
+//$("요소 선택[속성*=값]") : 지정한 속성이 값을 포함하는 요소만 선택
+$("#Wrap a[hrdf*=co.kr]").css({"color":"purple"});
+//("form의 id선택자:type 속성값") : input 요소 중 type 속성값이 일치하는 요소 선택
+//선택자, :, type 속성값 사이에 띄어쓰지 않기
+$("#member_1:text").css({"color":"gray"});
+//$("요소선택:hidden]") : 선택한 요소 중 숨겨진 요소만 선택
+$("#Wrap p:hidden").css("display", "block")
+//$("요소선택:contains(내용)") : 선택한 요소에서 내용을 포함하는 요소만 선택
+$("#Wrap p:contains(신윤진)").css("color", "purple");
+//$("요소선택").not("제외할 요소선택") : 선택한 제외할 요소 빼고 선택
+$("#Wrap li:not").not(":first") //#Wrap의 하위 요소 li의 첫번째 요소만 제외
+//$("요소선택").find("요소 선택") : 선택한 요소의 하위요소 중 괄호 안 요소 선택
+$("#Wrap").find(".con1").css("background", "black")
+//$("요소선택").filter("요소 선택") : 선택한 요소의 바로 아래 하위요소 선택
+$("#Wrap p").filter(".con1").css("background", "black")
+//$("요소선택").eq(인덱스번호) : 선택한 요소의 인덱스번호에 해당하는 요소 선택
+$("li").eq(0).css('background','black');
+/*$is("요소선택").is(:checked/selected/visible/hidden/animated)
+  선택한 요소가 지정한 속성과 일치하면 true 아니면 false*/
+var result = $("#chk").is(":checked");
+var result = $("#Wrap p").eq(0).is(:visible);
+//$("요소선택").text("새 내용") : 기존 내용을 지우고 새 내용을 적용
+$("#Wrap p").text("보라색");
+//$("요소선택").replace("기존 내용", "새 내용") : 기존 내용 지우고 새 내용 적용 
+/*$("요소선택").attr("속성") / $("요소선택").attr("속성", "새 값")
+  선택한 요소의 속성값을 가져온다 / 속성에 지정한 새 값을 적용 */
+var srcImg = $("#Wrap img").attr("src");
+$("#Wrap img").attr({"src":srcImg.replace("1.jpg","2.jpg")});
+//$("요소선택").removeAttr("속성") : 선택한 요소의 속성값을 지운다
+$("#Wrap img").removeAttr("border");
+//$("요소선택").addClass("클래스명") : 선택한 요소에 클래스를 생성
+$("#Wrap ul).addClass("method_list");
+  <style>
+     .method_list {color : purple; }
+  </style>
+//$("요소선택").removeClass("클래스명") : 선택한 요소에서 클래스 삭제  
+$("#Wrap).removeClass("java");
+//$("요소선택").toggleClass("클래스명") : 괄호 안 클래스가 있으면 삭제, 없으면 생성
+$("#Wrap).toggleClass("css");
+//$("요소선택").hasClass("클래스명") : 괄호 안 클래스가 있으면 true, 없으면 false
+$("#Wrap).hasClass("css");
+//$("요소선택").val() : 선택한 form요소의 value값을 가져오거나 새 값을 적용
+var result= $(".loginForm #id").val()
+  console.log(result)
+$(".loginForm #id").val("javascript");
+//요소 위치 메서드
+/*$("요소선택").position().top/.bottom/.left/.right
+    선택한 요소가 포지션 기준으로 떨어진 위치의 좌표값 반환
+*$("요소선택").offset().top/.left
+    선택한 요소가 document 기준으로 떨어진 위치의 좌표값 반환*/
+var pos_t = $("".box").position().top;
+var off_t = $("".box").offset().top;
+$(.txt1 span).text(pos_t);
+$(.txt2 span).text(off_t);
+/*$(요소선택).scrollTop() / .scrollTop("값") : 스크롤바가 이동한 위치의 좌표값을
+    반환하거나 입력한 값만큼 이동시킨다. 괄호 안 값은 단위 없이 써야함*/
+var topNum = $("h1").offset().top;
+$(window).scrollTop(topNum);
+/*$("요소선택").before("새요소") / $("새요소").insertBefore("요소선택") 
+    선택한 요소의 이전 위치에 새요소 생성*/
+$("#wrap p:eq(1)").befor("<p>언젠가 이 함성 멎을 때</p>");
+$("<p>언젠가 이 함성 멎을 때</p>").insertBefore("#wrap p:eq(1)");
+/*$("요소선택").after("새요소") / $("새요소").insertAfter("요소선택") 
+    선택한 요소의 다음 위치에 새요소 생성*/
+$("#wrap p:eq(2)").after("<p>내 곁에 함께 있어줘</p>");
+$("<p>내 곁에 함께 있어줘</p>").insertAfter("#wrap p:eq(2)"); 
+/*$("요소선택").append("새요소") / $("새요소").appendTo("요소선택") 
+    선택한 요소 내의 마지막에 새요소 생성*/
+/*$("요소선택").prepend("") / $("요소선택").prependTo("") 
+    선택한 요소 내의 처음에 새요소 생성 ul을 선택하든 ul li을 선택하든 li*/
+$("#list_method").append("<li>연민의굴레</li>");
+$("<li>미래의골동품가게</li>").prependTo("#list_method");
+/*$("요소선택").clone([true/false]) / 기본값은 false
+    인자값이 true면 이벤트까지 복제,요소를 복제, false면 요소만 복제 */
+$(".box1").children().clone(); //.box1의 모든 자식 요소를 복제
+//$("요소선택").empty() : 선택한 요소의 하위요소 모두 삭제
+$(".box1").empty();
+//$("요소선택").remove("") : 선택한 요소 삭제
+$(".box1").remove();
+/*$("새요소").replaceAll("요소선택") / $("요소선택").replaceWith("새요소")
+선택한 요소를 새요소로 변경 주로 요소를 한꺼번에 바꿀 때 사용*/
+$("<h3>프로잭트 기획안</h3>").replaceAll("h2");
+$("h2").replaceWith("<h3>프로잭트 기획안</h3>");
+//$("요소선택").unWrap(): 선택한 요소의 부모요소 삭제
+$(".box1 p").unWrap();
+//$("요소선택").Wrap("새요소"):  선택한 요소를 새요소로 각각 묶음
+$(".listMethod p").wrap("<div>");
+//$("요소선택").WrapAll("새요소"): 선택한 요소를 새요소로 한꺼번에 묶음
+$(".listMethod p").WrapAll("<div>");
+//$("요소선택").WrapInner("새요소") : 선택한 요소 하위요소를 새요소로 묶음
+$("#wrap h1").wrapInner("<div>");
+//자바스크립트 끝
+    
+//제이쿼리 시작    
+//$("요소 선택").trigger("이벤트 속성"): 강제로 이벤트 발생
+$(".btn1").trigger("mouseover");
+/*$(document).ready(function(){
+    자바스크립트 코드;
+}): document(외부 소스 제외한 HTML 전체 요소)의 로딩이 끝나면 이벤트 발생*/
+$(document).ready(function(){
+  var H = $(".img1").height();
+    console.log("이미지의 높이 : ", H); //이미지 높이 : 40
+});
+<div style="width: 30px; height: 40px; background: red;" class="img1">
+</div>
+/*$(window).load(function(){
+    자바스크립트 코드;
+}): 외부에 연동된 소스(iframe, video, img)의 로딩이 끝나면 이벤트를 발생
+ready()는 load대체가 안 되지만 load()는 ready() 대체 가능*/   
+$(window).load(function(){
+  var H = $(".img2").height();
+    console.log("이미지의 높이 : ", H); //이미지 높이 : 30
+});
+//http://place-hold.it/너빗값X높이값: 임시 이미지를 불러올 수 있다.
+<img src="http://place-hold.it/30X30" class="img2">
+//$(요소 선택).dblclick(function(){ 자바스크립트 코드}): 더블클릭할 때 이벤트 발생
+$(".btn1").dblclick(function(){
+    $(".txt1").css('color', 'pink');
+})
+/*$("요소 선택").mouseover(function(){ 자바스크립트 코드 })
+: 선택한 요소에 마우스 올릴 때 마다 이벤트 발생
+/*$("요소 선택").mouseout(function(){ 자바스크립트 코드 })
+: 선택한 요소에 마우스가 벗어날 때 마다 이벤트 발생*/
+$(".btn1").on({
+        "mouseover" : function(){
+            $(".txt1").css("color", "pink"); }, 
+        "onmouseout" : function() {
+            $(".txt1").css("color", "blue"); }
+});
+/*$("요소 선택").scroll(function() { 자바스크립트 코드 })
+: 스크롤바 이동할 때마다 이벤트 발생*/
+$(window).on("scroll", function(){
+// 이벤트 대상은 브라우저 $(window), $(this)이고 이벤트 정보를 sc_top 변수에 담음
+    var sc_top  = $(this).scrollTop();  //스크롤바 이동한 만큼의 값 구해서
+    $(".top").text(sc_top);                //출력
+});
+/*$("요소 선택").focus(function() { javascript code})
+: 선택한 요소로 이동하(포거스되)면 이벤트  발생
+$("요소 선택").blur(function() { javascript code}) 
+: 선택한 요소에서 다른 요소로 이동하면 이벤트 발생*/
+$("#id, #pw").on({      
+        "focus" : function(){
+            $(this).css("background","pink"); },
+        "blur" : function(){
+            $(this).css("background", "#fff");
+        }
+	});
+/*[내가 헷갈린거 메모] 함수에서 요소를 선택하는건 이거 아니면 나머지(if/ else)가 아님 
+따라서 #id 요소에서 #pw요소로 포커스가 넘어갈 때 #pw도 배경색을 핑크로 하려면
+#id, #pw 둘 다 해당 요소로 적어 줘야 함*/
+/*마우스 이벤트에 대한 키보드 대응 이벤트(키보드 접근성)
+    mouseover(마우스) && focus(키보드) / mouseout(마우스) && blur(키보드)
+*/ 
+$(".btn1").on("mouseover focus", function(){
+  $(".txt1").hide();  
+});   
+<button class="btn1">버튼</button>
+<p class="txt1">내용</p>
+//$("select요소 id").change(function() { javascript code}) : form요소의 값을 바꿈
+$("#name").change(function(){
+  $(".txt").text($(this).val());    //if($(this).val() == "칙촉") 이렇게 if문의 조건 가능
+});                                         //고정 구문 같으니까 통으로 외우기 $(this).val()
+<select id="name">
+    <option value="오예스"></option>
+    <option value="칙촉"></option>
+</select>
+<p class="txt"></p>
+/*$("요소 선택").keydown(function() { javascript code })
+: 선택한 요소에서 키보드를 누를 때 이벤트 발생 (단축키 설정, 한글 키 제외)*/
+$(document).on("keydown", function(e){
+    var direct = "";
+        switch(e.keyCode){
+            case 9 : direct = "tab";
+            break;
+            case 16 : direct = "shift";
+            break;
+        };
+        if(direct) $("#txt").val(direct);
+});    
+<input type="text" name="txt" id="txt"> //input의 value값에 direct변수 값이 들어감
+//$("요소 선택").off("제거할 이벤트 속성"): 이벤트 제거 - on() 메서드 제거
+/*$([document | "요소 선택"]).on("이벤트 종류", "이벤트대상", function(){});*/
+$(".btn1").off("click");  
+ $(".btn_wrap").on("click", function(){ 
+            $(document).off("mouseover", ".btn")
+    });  
+//$("요소 선택").undelegate("제거할 이벤트 속성"): 이벤트 제거 - delegate() 메서드 제거
+/*$([document | "요소 선택"]).undelegate("이벤트 종류", "이벤트대상", function(){});*/   
+
+
+    
+//그룹이벤트 등록 메서드
+//라이브 이벤트 등록 방식 : 이벤트 등록한 다음에 생성, 복제된 요소에도 이벤트 등록
+//$([document | "이벤트 대상의 상위요소"]).on("이벤트 종류", "이벤트대상", function(){});
+    $(document).on("mouseover focus", ".btn.on", function(){ 
+        /*.btn.on은 .on만 써도 됨
+        .btn.on는 css 문법으로 보자면 .btn > .on 이거일 듯
+        아니여씀 addClass는 선택한 요소에 클래스를 생성하는거니까 
+        .btn인 요소에 클래스가 생성됨 
+            <button class="btn on">버튼</button>
+        */
+       alert("hi"); 
+    });
+    $(".btn").addClass(".on");
+/*$([document | "요소 선택"]).delegate("이벤트대상", "이벤트 종류", function(){});
+   :  선택한 요소의 하위요소에 이벤트를 등록, 라이브 이벤트 등록 가능*/
+$(".btn_wrap").delegate(".btn.on", "mouseover focus", function(){ 
+       alert("hi"); 
+    });
+    $(".btn").addClass(".on");
+/*$([document | "요소 선택"]).one("이벤트 종류", "이벤트대상", function(){});
+   :  한 번 이벤트가 발생하면 등록된 이벤트 제거(일회성), 라이브이벤트 등록 가능*/
+$(".btn_wrap").delegate(".btn.on", "mouseover focus", function(){ 
+       alert("hi"); 
+    });
+    $(".btn").addClass(".on");
+
+</script>
